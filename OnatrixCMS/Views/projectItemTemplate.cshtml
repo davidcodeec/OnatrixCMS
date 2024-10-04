@@ -1,0 +1,32 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Name;
+}
+
+<section class="project-details">
+    <div class="container">
+        <div class="project-details-content">
+            <div class="content">
+                @Html.Raw(Model.Value("pageContent")) 
+            </div>
+        </div>
+        
+        @if(Model.HasValue("contentTag"))
+        {
+            var tags = Model.Value<IEnumerable<string>>("contentTag");
+            <ul class="tags-list">
+                <h4>Tags</h4>
+                @foreach(var tag in tags)
+                {
+                    <li>@tag</li>
+                }
+            </ul>
+        }
+    </div>
+</section>
+
+@await Html.PartialAsync("partials/static/contactinfo.cshtml")

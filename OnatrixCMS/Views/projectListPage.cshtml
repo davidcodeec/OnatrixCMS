@@ -1,0 +1,57 @@
+﻿
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var selection = Umbraco.Content(Guid.Parse("e3fb501b-0146-4016-9ab8-1881f0ca30c6"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible());
+}
+
+
+<section id="our-projects">
+    <div class="container">
+        <div class="projects">
+            @foreach (var item in selection) {
+                var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                var preamble = item?.Value<string>("preamble") ?? "";
+
+                <a href="@item.Url()">
+                    <div class="item">
+                        <div class="body">
+                            <img src="@image" alt="@item.Name">
+                        </div>
+                        <div class="text"> <!-- Wrapper for text -->
+                            <div class="header">
+                                <h4>@item.Name()</h4>
+                            </div>
+                            <div class="footer">
+                                <p>@preamble</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>       
+            }
+        </div>
+
+        <ul>
+            <h4>Tags</h4>
+            @if(Model.HasValue("contentTag")) {
+                var tags = Model.Value<IEnumerable<string>>("contentTag");
+                @foreach(var tag in tags) {
+                    <li>@tag</li>
+                }
+            }
+        </ul>
+    </div>
+</section>
+
+
+@await Html.PartialAsync("partials/static/contactinfo.cshtml")
+
+
+
+
+

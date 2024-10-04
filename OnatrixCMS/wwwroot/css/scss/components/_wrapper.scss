@@ -1,0 +1,21 @@
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    @include tablet {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr
+    }
+
+    @include desktop {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr
+    }
+
+    @include ultra-wide {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr
+    }
+}

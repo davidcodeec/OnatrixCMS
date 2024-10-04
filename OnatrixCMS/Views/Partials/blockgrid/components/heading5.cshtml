@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+ 
+@{
+  var headlineContent5 = Model?.Content.Value<string>("headlineContent5");
+}
+
+@if (!string.IsNullOrEmpty(headlineContent5))
+{
+    <h5>@headlineContent5</h5>
+}

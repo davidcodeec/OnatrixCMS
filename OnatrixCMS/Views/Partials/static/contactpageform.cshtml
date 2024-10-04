@@ -1,0 +1,61 @@
+﻿@{
+    bool.TryParse(ViewData["error_name"]?.ToString(), out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString(), out bool error_email);
+    bool.TryParse(ViewData["error_phone"]?.ToString(), out bool error_phone);
+    bool.TryParse(ViewData["error_service"]?.ToString(), out bool error_service);
+}
+
+
+
+@if (TempData["success"] != null)
+{
+    <div class="success-message">@TempData["Success"]</div>
+}
+else
+{
+    @using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post, new { id = "contactForm", @class = "form-container", novalidate = "novalidate" }))
+    {
+        <div class="intro-text">
+            <span>Request a call back</span>
+            <h2>Let us know about your next project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name" class="form-control" value="@ViewData["name"]" required />
+                <div class="form-input-error @(error_name ? "form-invalid-input" : "")" style="@(error_name ? "" : "display: none;")">Please enter your name.</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" name="Phone" placeholder="Enter your phone" class="form-control" value="@ViewData["phone"]" required />
+                <div class="form-input-error @(error_phone? "form-invalid-input" : "")" style="@(error_phone ? "" : "display: none;")">Please enter a valid phone number.</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email" class="form-control" value="@ViewData["email"]" required />
+                <div class="form-input-error @(error_phone ? "form-invalid-input" : "")" style="@(error_phone ? "" : "display: none;")">Please enter a valid email.</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="service" class="form-label">Select Service</label>
+                <select id="service" name="service" class="form-control">
+                    <option value="" disabled selected>Financial Consulting</option>
+                    <option value="service1">Project</option>
+                    <option value="service2">Contact</option>
+                    <option value="service3">Services</option>
+                </select>
+                <div class="form-input-error" style="display: none;">Please select a service.</div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+}

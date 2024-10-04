@@ -1,0 +1,125 @@
+.page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray);
+    padding: 20px;
+    margin-bottom: 50px;
+
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .breadcrumb {
+        list-style-type: none;
+        padding: 0; 
+        margin: 10px 0; 
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        flex-wrap: nowrap; 
+
+        li {
+            margin: 0 15px; 
+            white-space: nowrap;
+
+            a {
+                color: var(--color-dark);
+                text-decoration: none;
+
+                &.active,
+                &:hover {
+                    font-weight: 500;
+                    color: var(--color-secondary);
+                }
+            }
+
+            &.active {
+                color: var(--color-dark); 
+                pointer-events: none; 
+                flex: 1; 
+            }
+        }
+    }
+}
+
+
+
+
+
+.project-details {
+    .container {
+        display: flex;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+
+        .project-details-content {
+            flex: 1; 
+            margin-right: 20px; 
+
+            .content {
+                margin-bottom: 30px; 
+
+                h5 {
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+
+                p {
+                    margin: 10px 0;
+                    line-height: 1.6;
+                }
+
+                .suggestions-list {
+                    list-style-type: disc;
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .image-left {
+                    float: left;
+                    margin-right: 20px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .tags-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column; 
+            gap: 10px; 
+            width: 200px; 
+
+            li {
+                padding: 8px 12px;
+                background-color: white;
+                color: var(--color-dark);
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: var(--color-secondary)
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

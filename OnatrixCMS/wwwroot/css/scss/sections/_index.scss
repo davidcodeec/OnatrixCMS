@@ -1,0 +1,457 @@
+#hero-slider {
+    position: relative;
+    overflow: hidden;
+
+    .background-image {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: cover;
+    }
+
+    .container {
+        position: absolute; 
+        top: 80%; 
+        left: 20px; 
+        transform: translateY(-50%); 
+        z-index: 2;
+        color: #333;
+        max-width: 600px; 
+        width: 100%; 
+
+        .umb-block-grid__layout-container {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start; 
+            margin-bottom: 450px;
+            margin-left: 150px;
+            padding: 1rem;
+            width: 100%;
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 0.5rem; 
+            }
+
+            p {
+                font-size: 1.0rem;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+                color: #333;
+            }
+
+            .btn {
+                display: inline-block;
+
+                &.btn-primary {
+                    padding: 0.75rem 1.5rem;
+                    text-decoration: none;
+                    border-radius: 0.5rem;
+
+                    &:hover {
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+#about-us {
+    padding-top: 2rem; 
+    padding-bottom: 2rem;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .umb-block-grid__layout-container {
+            display: flex;
+            flex-direction: column; 
+            
+            &:nth-child(1) {
+                flex: 0 0 66.6667%; 
+                max-width: 66.6667%;
+            }
+            
+            &:nth-child(2) {
+                flex: 0 0 33.3333%; 
+                max-width: 33.3333%;
+            }
+
+            .umb-block-grid__layout-item {
+                margin-bottom: 1rem;
+
+                h6 {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    margin-bottom: 0rem;
+                    margin-top: 4rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                }
+
+                blockquote {
+                    font-style: italic;
+                    margin: 1rem 0;
+                    padding-left: 1rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    margin-bottom: 0rem;
+                }
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+#services {
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px 0;
+
+    .container {
+        // Optional: Styles for the container
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        .umb-block-grid__layout-container {
+            // General styles for the block grid container
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // Style for the <h6> element
+            h6 {
+                font-size: 18px;
+                text-align: center;
+                margin-bottom: 10px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+            // Style for the <h2> element
+            h2 {
+                font-size: 36px;
+                color: #333;
+                text-align: center;
+                margin-bottom: 20px;
+                line-height: 1.4;
+                max-width: 800px; // Limit the width for better readability
+            }
+            // Styles for the image slider container
+            .image-slider {
+                width: 100%;
+                margin: 20px 0;
+
+                .slides {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 50px; // Space between the images
+
+                    .slide-item {
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            display: block;
+                            transition: transform 0.3s ease; // Optional: add a hover effect
+
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#choose-us {
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        .umb-block-grid__layout-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; // Center align all text within the container
+
+            h2 {
+                font-size: 35px;
+                color: #333;
+                line-height: 1.4;
+                max-width: 800px;
+                margin: 0;
+            }
+
+            span {
+                font-size: 35px; // Increase the font size
+                font-weight: bold;
+                margin-bottom: 150px;
+            }
+
+            p {
+                font-size: 16px;
+                color: #666;
+                max-width: 800px;
+                margin-top: 30px;
+                line-height: 1.6;
+            }
+
+            a.btn {
+                font-size: 16px;
+                padding: 10px 20px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                display: inline-block;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+
+#choose-us-full {
+    margin-top: 50px;
+    padding: 0;
+    width: 100%;
+
+    .umb-block-grid__layout-container {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100vw;
+        }
+    }
+}
+
+
+
+#projects-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    .container {
+        max-width: 1200px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .umb-block-grid__area-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+
+            .umb-block-grid__area {
+                width: 100%;
+
+                .umb-block-grid__layout-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center; 
+
+                    .umb-block-grid__layout-item {
+                        width: 100%;
+                        margin-bottom: 10px; 
+                        
+                        &[data-content-element-type-alias="span"] {
+                            span {
+                                font-size: 1.5rem;
+                                font-weight: bold;
+                                display: block;
+                                margin-bottom: 1px;
+                            }
+                        }
+                        
+                        &[data-content-element-type-alias="heading2"] {
+                            h2 {
+                                font-size: 2.5rem;
+                                font-weight: bold;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+#projects {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+
+    .umb-block-grid__area-container {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+
+        .umb-block-grid__area {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .umb-block-grid__layout-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .umb-block-grid__layout-item {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    &[data-content-element-type-alias="dynamicContainer"] {
+                        padding: 0;
+                    }
+
+                    &[data-content-element-type-alias="imageSlider"] {
+                        .image-slider {
+                            width: 100%;
+                            overflow: hidden;
+                            position: relative;
+
+                            .slides {
+                                display: flex;
+                                width: 100%;
+                                transition: transform 0.5s ease-in-out;
+                               
+                            }
+
+                            .slide-image {
+                                flex: 0 0 auto; 
+                                width: 25%; 
+                                transition: opacity 0.5s ease;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                    display: block;
+                                    border-radius: 0;
+
+                                    &:hover {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#partners {
+    margin-top: 50px;
+    width: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+
+        .umb-block-grid__layout-container {
+            display: flex;
+            justify-content: center; 
+
+            .image-slider {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; 
+
+                .slides {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 50px;
+                }
+
+                .slide-item {
+                    flex: 0 0 auto; 
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+footer {
+    background-color: var(--color-dark);
+    margin-top: 100px;
+
+    .container {
+        display: flex;
+
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+
+            p {
+                color: var(--color-gray)
+            }
+        }
+    }
+}

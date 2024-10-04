@@ -1,0 +1,38 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var contactImageTop = settings?.Value<IPublishedContent>("contactImageTop")?.Url() ?? ""; 
+    var contactImageBottom = settings?.Value<IPublishedContent>("contactImageBottom")?.Url() ?? ""; 
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var officePhone = settings?.Value<string>("officePhone") ?? "";
+    var officeEmailAddress = settings?.Value<string>("officeEmailAddress") ?? "";
+}
+
+<section class="about-us-contact">
+                <div class="container">
+                <div class="about-us-contact-images">   
+                    <img src="@contactImageTop" alt="">
+                    <img class="about-us-contact-image-two" src="@contactImageBottom" alt="">
+                </div>
+                    <div class="about-us-contact-text">
+                        <h2>Let us know about your next project</h2>
+                        <div>
+                            <h6> <i class="fa-regular fa-location-dot"></i>Office location</h6>
+                            <div class="address">@officeLocation</div>
+                        </div>
+                        <div>
+                            <h6><i class="fa-light fa-phone-flip"></i>Phone number</h6>
+                            <div class="phone">@officePhone</div>
+                        </div>
+                        <div>
+                            <h6><i class="fa-light fa-envelope"></i>E-mail address</h6>
+                            <div class="emailaddress">@officeEmailAddress</div>
+                        </div>
+                    </div>
+                </div>
+                
+</section>

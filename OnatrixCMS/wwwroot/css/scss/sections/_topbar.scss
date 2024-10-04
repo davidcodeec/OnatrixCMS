@@ -1,0 +1,17 @@
+.top-bar {
+    background-color: var(--color-primary);
+    height: 60%;
+    padding: 20px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        margin-top: 0px;
+        color: var(--color-light);
+
+        .address {
+            color: var(--color-light);
+        }
+    }
+}

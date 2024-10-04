@@ -1,0 +1,24 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ModularPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+   
+    var contactPageGuid = Guid.Parse("fd6f9ea7-27be-4b89-a380-5587e44042a7");
+
+    
+    var currentPageGuid = Model.Key; 
+
+    
+    var isContactPage = currentPageGuid == contactPageGuid;
+}
+
+@await Html.GetBlockGridHtmlAsync(Model!.Layout)
+
+@if(isContactPage) 
+{
+    @await Html.PartialAsync("partials/static/contactmappage.cshtml")
+}

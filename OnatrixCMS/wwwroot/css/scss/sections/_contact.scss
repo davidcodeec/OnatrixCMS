@@ -1,0 +1,200 @@
+#about-us-contact {
+    &.spacing-top {
+        padding-top: 40px; 
+    }
+
+    &.spacingBottomClass {
+        padding-bottom: 250px; 
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px; 
+        display: flex;
+        flex-wrap: wrap;
+        position: relative; 
+    }
+    
+    .umb-block-grid__area-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); 
+        gap: 20px;
+
+        .umb-block-grid__layout-item {
+            padding: 20px; 
+            box-sizing: border-box;
+            position: relative; 
+
+            &[data-col-span="12"] {
+                grid-column: span 12;
+            }
+
+            &[data-col-span="7"] {
+                grid-column: span 7;
+            }
+
+            &[data-col-span="5"] {
+                grid-column: span 5;
+            }
+            
+            img {
+                position: absolute; 
+                top: 0; 
+                left: 0; 
+                width: auto; 
+                height: auto; 
+                max-width: none; 
+                display: block; 
+                z-index: 1; 
+            }
+            
+            &:nth-child(1) img {
+                z-index: 1; 
+            }
+
+            &:nth-child(2) img {
+                z-index: 2; 
+            }
+            
+            .about-us-contact-text {
+                position: relative; 
+                z-index: 10; 
+                h2 {
+                    font-size: 2em;
+                    margin-bottom: 20px;
+                }
+
+                h6 {
+                    font-size: 1.2em;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 1em;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    
+    .umb-block-grid__area {
+        &[data-area-col-span="12"] {
+            grid-column: span 12;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+#contact-map {
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+
+    .background-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .form-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        .intro-text {
+            text-align: center; 
+            margin-bottom: 20px; 
+
+            span {
+                display: block; 
+                font-weight: bold; 
+                margin-bottom: 10px; 
+            }
+
+            h2 {
+                margin: 10px 0; 
+            }
+
+            p {
+                margin-bottom: 20px; 
+            }
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .form-group {
+                flex: 0 0 48%;
+                display: flex;
+                flex-direction: column;
+
+                .form-label {
+                    margin-bottom: 5px;
+                }
+
+                .form-control {
+                    width: 100%;
+                }
+
+                .form-input-error {
+                    color: red;
+                    font-size: 0.85em;
+                }
+            }
+        }
+
+        .button-container {
+            display: flex; 
+            justify-content: center; 
+            margin-top: 20px; 
+        }
+    }
+}
+
+#contact-brands {
+    margin-top: 50px;
+    width: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .brand-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+        width: 100%;
+        padding: 20px;
+
+        .slide-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
